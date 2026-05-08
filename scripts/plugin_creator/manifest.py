@@ -50,7 +50,11 @@ class Capability:
 
     @property
     def has_mcp(self) -> bool:
-        return bool(self.raw.get("mcp", {}).get("servers"))
+        mcp = self.raw.get("mcp")
+        if not isinstance(mcp, dict):
+            return False
+        servers = mcp.get("servers")
+        return isinstance(servers, dict) and bool(servers)
 
     @property
     def has_agents(self) -> bool:
@@ -168,7 +172,10 @@ def build_mcp_config(capability: Capability) -> dict[str, Any] | None:
     Returns ``None`` for capabilities without an MCP block, which is the
     signal to skip writing a ``.mcp.json``.
     """
-    servers = capability.raw.get("mcp", {}).get("servers")
+    mcp = capability.raw.get("mcp")
+    if not isinstance(mcp, dict):
+        return None
+    servers = mcp.get("servers")
     if not isinstance(servers, dict) or not servers:
         return None
 

@@ -65,9 +65,16 @@ def refresh_extended(*, dry_run: bool = False) -> bool:
     if not isinstance(existing, dict):  # pragma: no cover - defensive
         raise ValueError(f"{path}: expected mapping at top level")
 
-    existing_plugins = {
-        p["name"]: p for p in existing.get("plugins", []) if isinstance(p, dict)
-    }
+    # Build the lookup table defensively: skip plugin entries that are not
+    # dicts or don't have a string ``name`` key. Hand-edited marketplaces
+    # shouldn't crash the sync.
+    existing_plugins: dict[str, dict[str, Any]] = {}
+    for plugin in existing.get("plugins", []):
+        if not isinstance(plugin, dict):
+            continue
+        name = plugin.get("name")
+        if isinstance(name, str) and name:
+            existing_plugins[name] = plugin
 
     merged_plugins: list[dict[str, Any]] = []
     for fresh_entry in fresh["plugins"]:

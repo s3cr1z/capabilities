@@ -66,9 +66,17 @@ def convert_all(*, dry_run: bool = False) -> dict[str, dict[str, bool]]:
 
 
 def convert_target(target: str, *, dry_run: bool = False) -> dict[str, dict[str, bool]]:
-    """Convert one capability identified by name or path."""
+    """Convert one capability identified by name, directory, or manifest path.
+
+    Accepts:
+    * a bare capability name (resolved against ``capabilities/``)
+    * a directory path (the capability dir)
+    * a path to ``capability.yaml`` directly
+    """
     candidate = Path(target)
-    if candidate.is_dir():
+    if candidate.is_file():
+        cap = load_capability(candidate)
+    elif candidate.is_dir():
         cap = load_capability(candidate)
     else:
         from .paths import capabilities_dir

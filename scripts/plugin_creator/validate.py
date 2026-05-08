@@ -78,7 +78,10 @@ def validate_all(*, external: bool = False) -> list[str]:
     errors.extend(_check_hook_scripts(warnings))
 
     if external:
-        errors.extend(_check_external())
+        # External validation is opt-in convenience; surface failures as
+        # warnings so a missing ``claude`` binary doesn't fail builds on
+        # contributor machines that don't have Claude Code installed.
+        warnings.extend(_check_external())
 
     if errors:
         raise ValidationError(errors)
@@ -151,6 +154,8 @@ def _check_extended_doc(doc: dict[str, Any]) -> list[str]:
 
 def _check_spec_doc(doc: dict[str, Any]) -> list[str]:
     errors: list[str] = []
+    if not isinstance(doc, dict):
+        return ["marketplace.json: expected an object at top level"]
     plugins = doc.get("plugins")
     if not isinstance(plugins, list):
         return ["marketplace.json: 'plugins' must be a list"]
@@ -260,8 +265,7 @@ def _check_hook_scripts(warnings: list[str]) -> list[str]:
             if not path.exists():
                 errors.append(f"{cap.slug}: hook command not found: {path}")
                 continue
-            mode = path.stat().st_mode
-            if path.suffix in {"", ".sh", ".py"} and not (mode & stat.S_IXUSR):
+            if path.suffix in {"", ".sh", ".py"} and not is_executable(path):
                 warnings.append(
                     f"{cap.slug}: hook command {path.name} not executable (chmod +x recommended)"
                 )
