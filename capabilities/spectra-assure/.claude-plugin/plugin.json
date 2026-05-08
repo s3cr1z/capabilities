@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "spectra-assure",
+  "version": "0.1.0",
+  "description": "Software supply chain security via ReversingLabs Spectra Assure. Scans open source dependencies for malware, tampering, vulnerabilities, secret leakage, and policy violations before they enter your project. Goes beyond traditional SCA with binary differential analysis that catches compromised package releases — the class of attacks that hit Ultralytics (PyPI, Dec 2024), ctx/phpass, and xz-utils (CVE-2024-3094). Wraps the Spectra Assure Community MCP server.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "reversinglabs",
+    "spectra-assure",
+    "supply-chain-security",
+    "sca",
+    "sbom",
+    "malware-detection",
+    "package-tampering",
+    "binary-analysis",
+    "nist-ssdf",
+    "eo-14028",
+    "secure-by-design"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

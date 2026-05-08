@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "network-ops",
+  "version": "1.0.1",
+  "description": "Network operations and Active Directory exploitation. Autonomous red teaming with Nmap scanning, Netexec enumeration, Impacket Kerberos attacks, Certipy AD CS abuse, BloodyAD privilege escalation, Krbrelayx relay attacks, and password cracking.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "network-ops",
+    "red-team",
+    "active-directory",
+    "penetration-testing"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  }
+}

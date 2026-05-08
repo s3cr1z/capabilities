@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "source-code-analysis-worker-template",
+  "version": "0.1.0",
+  "description": "Reference template for a worker-coordinated multi-agent capability. A single ``source-analysis.requested`` event drives a five-stage pipeline against a GitHub repo: clone, attack-surface mapping, parallel specialist review, a reconciling final reviewer that records structured findings via a typed capability tool, and one validator session per high or critical finding. Intended to be forked as a starting point for similar pipelines.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "source-analysis",
+    "security",
+    "multi-agent",
+    "github",
+    "worker",
+    "template",
+    "reference"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  }
+}

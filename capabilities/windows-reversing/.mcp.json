@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "pe-triage": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/pe_triage.py"
+      ]
+    },
+    "ghidra": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/ghidra.py"
+      ]
+    },
+    "qiling": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/qiling.py"
+      ]
+    }
+  }
+}

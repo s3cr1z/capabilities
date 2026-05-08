@@ -1,0 +1,475 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "dreadnode-capabilities",
+  "description": "Dreadnode capabilities exposed as Claude Code plugins. Each entry is generated from the matching capability.yaml; install one with `/plugin install <name>@dreadnode-capabilities`.",
+  "owner": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "metadata": {
+    "pluginRoot": "./capabilities",
+    "extended": {
+      "syncedFrom": "capability.yaml"
+    }
+  },
+  "plugins": [
+    {
+      "name": "ai-red-teaming",
+      "source": "ai-red-teaming",
+      "description": "Probe the security and safety of AI applications, agents, and foundation models. Orchestrates adversarial attack workflows to discover vulnerabilities in LLMs, agentic systems, MCP servers, multi-agent architectures, RAG pipelines, IDE/code agents, and custom AI endpoints before they are exploited. Covers jailbreaking, prompt injection, data exfiltration, tool manipulation, reasoning attacks, guardrail bypass, and more — mapped to OWASP LLM Top 10, OWASP ASI01-ASI10, MITRE ATLAS, and NIST AI RMF compliance frameworks. 61 attack algorithms, 547 transforms, 141 scorers, 260 bundled harm goals across 25 sub-categories in safety, security, and agentic tiers.",
+      "version": "1.2.0",
+      "keywords": [
+        "ai-red-teaming",
+        "airt",
+        "llm-security",
+        "adversarial",
+        "safety",
+        "owasp",
+        "owasp-asi",
+        "mitre-atlas",
+        "compliance",
+        "jailbreak",
+        "prompt-injection",
+        "mcp-security",
+        "multi-agent",
+        "agentic"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/ai-red-teaming/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": false,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "bloodhound",
+      "source": "bloodhound",
+      "description": "BloodHound CE integration for Active Directory attack path analysis. Graph-based queries against Neo4j for domain enumeration, tier zero identification, Kerberos attack surfaces, delegation abuse, PKI/ADCS vulnerabilities, and Azure/Entra attack paths.",
+      "version": "1.0.0",
+      "keywords": [
+        "bloodhound",
+        "active-directory",
+        "attack-paths",
+        "graph-analysis"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/bloodhound/capability.yaml",
+        "components": {
+          "agents": false,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "bloodhound-enterprise",
+      "source": "bloodhound-enterprise",
+      "description": "BloodHound Enterprise integration via the v2 REST API. HMAC-signed requests (long-lived integration) or JWT bearer (interactive); full coverage of attack-path findings, asset groups + tier-zero curation, AD/Azure/OpenGraph entity walks, raw + saved Cypher, data ingestion (SharpHound/AzureHound uploads), posture trending, and audit logs. Complementary to the existing bloodhound capability — that one talks Bolt to a local CE Neo4j; this one talks REST to a hosted BHE deployment.",
+      "version": "0.1.0",
+      "keywords": [
+        "bloodhound",
+        "bloodhound-enterprise",
+        "active-directory",
+        "attack-paths",
+        "tier-zero",
+        "identity-graph",
+        "posture",
+        "specterops"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/bloodhound-enterprise/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": false,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "dotnet-reversing",
+      "source": "dotnet-reversing",
+      "description": ".NET reverse engineering for decompiling and analyzing assemblies (.dll, .exe). Provides binary scanning, namespace exploration, type decompilation, reference search, and call flow tracing via ILSpy.",
+      "version": "1.0.0",
+      "keywords": [
+        "dotnet",
+        "reversing",
+        "decompilation",
+        "ilspy"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/dotnet-reversing/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": false,
+          "workers": false
+        },
+        "dependencies": {
+          "python": [
+            "aiohttp>=3.10.0",
+            "loguru>=0.7.0"
+          ]
+        }
+      }
+    },
+    {
+      "name": "ghostwriter-readonly",
+      "source": "ghostwriter-readonly",
+      "description": "Read-only GhostWriter integration. Query clients, projects, findings, objectives, targets, scope, deconflictions, evidence, observations, reports, infrastructure (servers and domains), activity logs, white cards, and notes without modifying any GhostWriter state.",
+      "version": "1.0.0",
+      "keywords": [
+        "ghostwriter",
+        "reporting",
+        "read-only",
+        "findings",
+        "pentest"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/ghostwriter-readonly/capability.yaml",
+        "components": {
+          "agents": false,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "ios-forensics",
+      "source": "ios-forensics",
+      "description": "iOS forensics and mercenary-spyware triage via MVT (Mobile Verification Toolkit). Provides curated modules over iTunes/Finder backups and full-filesystem extractions for device posture, communications, location/activity, configuration profiles, and spyware detection (Pegasus, Predator, QuaDream, RCS) driven by STIX IoCs, plus an escape hatch for the full MVT module catalog and raw SQLite/plist/Manifest.db helpers. Includes playbooks for image triage, spyware hunts, communications analysis, activity reconstruction, and configuration/persistence review.",
+      "version": "0.1.0",
+      "keywords": [
+        "forensics",
+        "dfir",
+        "ios",
+        "mobile-forensics",
+        "mvt",
+        "spyware",
+        "pegasus",
+        "predator",
+        "incident-response"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/ios-forensics/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "memory-forensics",
+      "source": "memory-forensics",
+      "description": "Memory forensics and DFIR triage via Volatility3. Curated tools for process enumeration, network artifacts, code injection, credential extraction, registry analysis, and YARA over memory images, plus playbooks for triage, injection / credential / persistence hunts, and YARA-based IoC sweeping.",
+      "version": "0.1.0",
+      "keywords": [
+        "forensics",
+        "dfir",
+        "memory-forensics",
+        "volatility",
+        "incident-response",
+        "malware-analysis"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/memory-forensics/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        },
+        "checks": [
+          {
+            "name": "uv",
+            "command": "command -v uv >/dev/null 2>&1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mythic-c2",
+      "source": "mythic-c2",
+      "description": "Mythic C2 integration. Read-only observation (callbacks, tasks, credentials, files, artifacts, keylogs, screenshots, processes, tokens, BloodHound discovery, operation summaries) plus optional Apollo post-exploitation (execution, token manipulation, registry, lateral movement, SharpHound). An annotator worker watches completed tasks and writes AI findings onto Mythic's own surfaces — task comments, severity/category tags, and the operation event log.",
+      "version": "2.1.0",
+      "keywords": [
+        "c2",
+        "mythic",
+        "post-exploitation",
+        "implant",
+        "read-only",
+        "reporting"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/mythic-c2/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": false,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "mythic-c2-readonly",
+      "source": "mythic-c2-readonly",
+      "description": "Read-only Mythic C2 integration. Query callbacks, task history (command input/output), credentials, downloaded files, artifacts, keylogs, screenshots, processes, file browser data, and tokens without executing any commands or modifying Mythic state.",
+      "version": "1.0.0",
+      "keywords": [
+        "c2",
+        "mythic",
+        "read-only",
+        "reporting"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/mythic-c2-readonly/capability.yaml",
+        "components": {
+          "agents": false,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "network-ops",
+      "source": "network-ops",
+      "description": "Network operations and Active Directory exploitation. Autonomous red teaming with Nmap scanning, Netexec enumeration, Impacket Kerberos attacks, Certipy AD CS abuse, BloodyAD privilege escalation, Krbrelayx relay attacks, and password cracking.",
+      "version": "1.0.1",
+      "keywords": [
+        "network-ops",
+        "red-team",
+        "active-directory",
+        "penetration-testing"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/network-ops/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": false,
+          "mcp": false,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "secure-software",
+      "source": "secure-software",
+      "description": "Package supply-chain analysis via ReversingLabs Spectra Assure (secure.software). Search the Community catalogue by purl or hash, import community packages into your Portal for analysis, export reports (CycloneDX, SPDX, SARIF, rl-json, rl-cve), download the underlying artifacts, and enrich with OSV vulnerability lookups, OpenSSF Scorecard health, archive extraction, strings/entropy, and YARA scanning. Chain secure.software findings with reversing tools (e.g. dotnet-reversing) to investigate suspicious packages.",
+      "version": "1.0.0",
+      "keywords": [
+        "supply-chain",
+        "sbom",
+        "malware",
+        "reversing",
+        "vulnerability-analysis",
+        "secure-software",
+        "reversinglabs",
+        "spectra-assure",
+        "osv",
+        "scorecard"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/secure-software/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": false,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "sliver-c2",
+      "source": "sliver-c2",
+      "description": "Sliver C2 framework integration. Provides server management (session and beacon listing, listener creation, implant generation) and implant post-exploitation (command execution, file operations, token manipulation, registry operations, process injection).",
+      "version": "1.0.0",
+      "keywords": [
+        "c2",
+        "sliver",
+        "post-exploitation",
+        "implant"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/sliver-c2/capability.yaml",
+        "components": {
+          "agents": false,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "source-code-analysis-worker-template",
+      "source": "source-code-analysis-worker-template",
+      "description": "Reference template for a worker-coordinated multi-agent capability. A single ``source-analysis.requested`` event drives a five-stage pipeline against a GitHub repo: clone, attack-surface mapping, parallel specialist review, a reconciling final reviewer that records structured findings via a typed capability tool, and one validator session per high or critical finding. Intended to be forked as a starting point for similar pipelines.",
+      "version": "0.1.0",
+      "keywords": [
+        "source-analysis",
+        "security",
+        "multi-agent",
+        "github",
+        "worker",
+        "template",
+        "reference"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/source-code-analysis-worker-template/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": false,
+          "mcp": false,
+          "workers": true
+        },
+        "checks": [
+          {
+            "name": "git",
+            "command": "command -v git"
+          }
+        ]
+      }
+    },
+    {
+      "name": "spectra-assure",
+      "source": "spectra-assure",
+      "description": "Software supply chain security via ReversingLabs Spectra Assure. Scans open source dependencies for malware, tampering, vulnerabilities, secret leakage, and policy violations before they enter your project. Goes beyond traditional SCA with binary differential analysis that catches compromised package releases — the class of attacks that hit Ultralytics (PyPI, Dec 2024), ctx/phpass, and xz-utils (CVE-2024-3094). Wraps the Spectra Assure Community MCP server.",
+      "version": "0.1.0",
+      "keywords": [
+        "reversinglabs",
+        "spectra-assure",
+        "supply-chain-security",
+        "sca",
+        "sbom",
+        "malware-detection",
+        "package-tampering",
+        "binary-analysis",
+        "nist-ssdf",
+        "eo-14028",
+        "secure-by-design"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/spectra-assure/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        }
+      }
+    },
+    {
+      "name": "web-security",
+      "source": "web-security",
+      "description": "Web application penetration testing with 30+ attack technique playbooks covering request smuggling, cache poisoning, SSRF, SSTI, DOM vulnerabilities, authentication bypasses, parser differentials, and client-side attacks. Includes HTTP client tooling, Caido proxy integration via MCP, credential management, DNS rebinding, phone verification, and vulnerability verification.",
+      "version": "1.0.3",
+      "keywords": [
+        "web-security",
+        "penetration-testing",
+        "request-smuggling",
+        "cache-poisoning",
+        "dns-rebinding",
+        "dom-security",
+        "phone-verification"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/web-security/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        },
+        "checks": [
+          {
+            "name": "nuclei",
+            "command": "command -v nuclei >/dev/null 2>&1 || test -x \"$HOME/.pdtm/go/bin/nuclei\""
+          },
+          {
+            "name": "httpx",
+            "command": "command -v httpx >/dev/null 2>&1 || test -x \"$HOME/.pdtm/go/bin/httpx\""
+          },
+          {
+            "name": "interactsh-client",
+            "command": "command -v interactsh-client >/dev/null 2>&1 || test -x \"$HOME/go/bin/interactsh-client\""
+          },
+          {
+            "name": "protoscope",
+            "command": "command -v protoscope >/dev/null 2>&1 || test -x \"$HOME/go/bin/protoscope\""
+          },
+          {
+            "name": "caido-cli",
+            "command": "command -v caido-cli"
+          },
+          {
+            "name": "burp",
+            "command": "test -f /opt/burp/burpsuite.jar"
+          },
+          {
+            "name": "jxscout",
+            "command": "command -v jxscout-pro-v2"
+          }
+        ],
+        "dependencies": {
+          "packages": [
+            "default-jre-headless"
+          ],
+          "python": [
+            "fastmcp>=2.0",
+            "httpx>=0.28",
+            "caido-sdk-client"
+          ],
+          "scripts": [
+            "scripts/install_tools.sh"
+          ]
+        }
+      }
+    },
+    {
+      "name": "windows-reversing",
+      "source": "windows-reversing",
+      "description": "Windows native PE reversing (.exe/.dll, x86/x64) on macOS and Linux. Static triage (pefile, entropy, imports/exports, MITRE capa tags, obfuscated strings via FLOSS), Ghidra headless decompilation with cached projects, and Qiling-based PE emulation with one-shot anti-debug bypass hooks for crackmes, CTF challenges, and packed binaries — no Windows host required.",
+      "version": "0.1.0",
+      "keywords": [
+        "windows",
+        "reversing",
+        "pe",
+        "malware-analysis",
+        "ghidra",
+        "qiling",
+        "anti-debug",
+        "ctf"
+      ],
+      "extended": {
+        "capabilityYaml": "./capabilities/windows-reversing/capability.yaml",
+        "components": {
+          "agents": true,
+          "skills": true,
+          "mcp": true,
+          "workers": false
+        },
+        "checks": [
+          {
+            "name": "uv",
+            "command": "command -v uv >/dev/null 2>&1"
+          },
+          {
+            "name": "java-17-for-ghidra",
+            "command": "command -v java >/dev/null 2>&1 && java -version 2>&1 | grep -Eq \"version \\\"(1[7-9]|[2-9][0-9])\""
+          },
+          {
+            "name": "git-for-capa-rules",
+            "command": "command -v git >/dev/null 2>&1"
+          }
+        ]
+      }
+    }
+  ]
+}

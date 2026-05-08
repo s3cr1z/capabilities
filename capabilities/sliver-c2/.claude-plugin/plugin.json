@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "sliver-c2",
+  "version": "1.0.0",
+  "description": "Sliver C2 framework integration. Provides server management (session and beacon listing, listener creation, implant generation) and implant post-exploitation (command execution, file operations, token manipulation, registry operations, process injection).",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "c2",
+    "sliver",
+    "post-exploitation",
+    "implant"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

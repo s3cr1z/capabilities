@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "ghostwriter": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/server.py"
+      ],
+      "env": {
+        "GHOSTWRITER_URL": "${GHOSTWRITER_URL:-}",
+        "GHOSTWRITER_API_TOKEN": "${GHOSTWRITER_API_TOKEN:-}",
+        "GHOSTWRITER_USERNAME": "${GHOSTWRITER_USERNAME:-}",
+        "GHOSTWRITER_PASSWORD": "${GHOSTWRITER_PASSWORD:-}"
+      }
+    }
+  }
+}

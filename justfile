@@ -37,6 +37,26 @@ sync-local force="false":
     [[ "{{ force }}" == "true" ]] && cmd+=(--force)
     "${cmd[@]}"
 
+# --- Claude Code plugin creator ----------------------------------------------
+
+# Convert capability.yaml -> plugin.json + .mcp.json (one capability or --all)
+plugin-convert *args="--all":
+    uv run --with pyyaml python -m scripts.plugin_creator convert {{ args }}
+
+# Interactive (or --name/--type) wizard for a new capability + Claude Code plugin
+plugin-scaffold *args="":
+    uv run --with pyyaml python -m scripts.plugin_creator scaffold {{ args }}
+
+# Rebuild marketplace.extended.json + marketplace.json from current capabilities
+plugin-sync *args="":
+    uv run --with pyyaml python -m scripts.plugin_creator sync {{ args }}
+
+# Validate plugin manifests, marketplace catalog, frontmatter, executable bits
+plugin-validate *args="":
+    uv run --with pyyaml python -m scripts.plugin_creator validate {{ args }}
+
+# -----------------------------------------------------------------------------
+
 # Mirror repo capabilities into ~/.dreadnode/capabilities
 sync-dreadnode-files:
     #!/usr/bin/env bash

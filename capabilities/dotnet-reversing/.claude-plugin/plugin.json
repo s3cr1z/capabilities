@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "dotnet-reversing",
+  "version": "1.0.0",
+  "description": ".NET reverse engineering for decompiling and analyzing assemblies (.dll, .exe). Provides binary scanning, namespace exploration, type decompilation, reference search, and call flow tracing via ILSpy.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "dotnet",
+    "reversing",
+    "decompilation",
+    "ilspy"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  }
+}

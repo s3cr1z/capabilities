@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "mythic-c2-readonly",
+  "version": "1.0.0",
+  "description": "Read-only Mythic C2 integration. Query callbacks, task history (command input/output), credentials, downloaded files, artifacts, keylogs, screenshots, processes, file browser data, and tokens without executing any commands or modifying Mythic state.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "c2",
+    "mythic",
+    "read-only",
+    "reporting"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

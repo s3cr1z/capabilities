@@ -1,0 +1,50 @@
+{
+  "mcpServers": {
+    "caido": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/caido.py"
+      ]
+    },
+    "jxscout": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/jxscout.py"
+      ]
+    },
+    "thermoptic": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/thermoptic.py"
+      ]
+    },
+    "hackerone": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/hackerone.py"
+      ]
+    },
+    "agent-browser": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/agent_browser.py"
+      ]
+    },
+    "protoscope": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/protoscope.py"
+      ]
+    },
+    "burp": {
+      "url": "http://127.0.0.1:9876/",
+      "timeout": 3600
+    }
+  }
+}
