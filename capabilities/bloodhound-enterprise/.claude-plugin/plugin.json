@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "bloodhound-enterprise",
+  "version": "0.1.0",
+  "description": "BloodHound Enterprise integration via the v2 REST API. HMAC-signed requests (long-lived integration) or JWT bearer (interactive); full coverage of attack-path findings, asset groups + tier-zero curation, AD/Azure/OpenGraph entity walks, raw + saved Cypher, data ingestion (SharpHound/AzureHound uploads), posture trending, and audit logs. Complementary to the existing bloodhound capability — that one talks Bolt to a local CE Neo4j; this one talks REST to a hosted BHE deployment.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "bloodhound",
+    "bloodhound-enterprise",
+    "active-directory",
+    "attack-paths",
+    "tier-zero",
+    "identity-graph",
+    "posture",
+    "specterops"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  }
+}

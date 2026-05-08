@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "mythic": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp_server.py"
+      ],
+      "env": {
+        "MYTHIC_SERVER_IP": "${MYTHIC_SERVER_IP:-127.0.0.1}",
+        "MYTHIC_SERVER_PORT": "${MYTHIC_SERVER_PORT:-}",
+        "MYTHIC_USERNAME": "${MYTHIC_USERNAME:-mythic_admin}",
+        "MYTHIC_PASSWORD": "${MYTHIC_PASSWORD:-}",
+        "MYTHIC_API_TOKEN": "${MYTHIC_API_TOKEN:-}",
+        "MYTHIC_TIMEOUT": "${MYTHIC_TIMEOUT:-}",
+        "MYTHIC_DATA_DIR": "${MYTHIC_DATA_DIR:-}"
+      }
+    }
+  }
+}

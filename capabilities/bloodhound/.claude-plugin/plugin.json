@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "bloodhound",
+  "version": "1.0.0",
+  "description": "BloodHound CE integration for Active Directory attack path analysis. Graph-based queries against Neo4j for domain enumeration, tier zero identification, Kerberos attack surfaces, delegation abuse, PKI/ADCS vulnerabilities, and Azure/Entra attack paths.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "bloodhound",
+    "active-directory",
+    "attack-paths",
+    "graph-analysis"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

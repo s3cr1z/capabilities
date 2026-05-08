@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ghostwriter-readonly",
+  "version": "1.0.0",
+  "description": "Read-only GhostWriter integration. Query clients, projects, findings, objectives, targets, scope, deconflictions, evidence, observations, reports, infrastructure (servers and domains), activity logs, white cards, and notes without modifying any GhostWriter state.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "ghostwriter",
+    "reporting",
+    "read-only",
+    "findings",
+    "pentest"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

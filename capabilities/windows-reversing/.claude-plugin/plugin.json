@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "windows-reversing",
+  "version": "0.1.0",
+  "description": "Windows native PE reversing (.exe/.dll, x86/x64) on macOS and Linux. Static triage (pefile, entropy, imports/exports, MITRE capa tags, obfuscated strings via FLOSS), Ghidra headless decompilation with cached projects, and Qiling-based PE emulation with one-shot anti-debug bypass hooks for crackmes, CTF challenges, and packed binaries — no Windows host required.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "windows",
+    "reversing",
+    "pe",
+    "malware-analysis",
+    "ghidra",
+    "qiling",
+    "anti-debug",
+    "ctf"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

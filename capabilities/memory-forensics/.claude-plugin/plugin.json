@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "memory-forensics",
+  "version": "0.1.0",
+  "description": "Memory forensics and DFIR triage via Volatility3. Curated tools for process enumeration, network artifacts, code injection, credential extraction, registry analysis, and YARA over memory images, plus playbooks for triage, injection / credential / persistence hunts, and YARA-based IoC sweeping.",
+  "repository": "https://github.com/dreadnode/capabilities",
+  "license": "MIT",
+  "keywords": [
+    "forensics",
+    "dfir",
+    "memory-forensics",
+    "volatility",
+    "incident-response",
+    "malware-analysis"
+  ],
+  "author": {
+    "name": "Dreadnode",
+    "url": "https://dreadnode.io"
+  },
+  "mcpServers": "./.mcp.json"
+}

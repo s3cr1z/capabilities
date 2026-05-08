@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "volatility": {
+      "command": "uv",
+      "args": [
+        "run",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/volatility.py"
+      ]
+    }
+  }
+}

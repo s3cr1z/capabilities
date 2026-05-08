@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "spectra-assure": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "RL_TOKEN",
+        "-e",
+        "RL_PORTAL_SERVER",
+        "-e",
+        "RL_PORTAL_ORG",
+        "-e",
+        "RL_PORTAL_GROUP",
+        "-e",
+        "RL_PROFILE",
+        "-v",
+        "${WORKSPACE_ROOT:-${PWD}}:/project",
+        "reversinglabs/rl-mcp-community:latest"
+      ]
+    }
+  }
+}
